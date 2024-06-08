@@ -60,6 +60,8 @@ case $chosen in
     $lock)
         if [[ "$DESKTOP_SESSION" == "i3" ]]; then
 			i3lock -f -t -i ~/.config/wallpapers/1328226.png
+        elif [[ "$DESKTOP_SESSION" == "xfce+i3" ]]; then
+            i3lock -f -t -i ~/.config/wallpapers/1328226.png
 		fi
         ;;
     $suspend)
@@ -82,6 +84,8 @@ case $chosen in
 			elif [[ "$DESKTOP_SESSION" == "bspwm" ]]; then
 				bspc quit
 			elif [[ "$DESKTOP_SESSION" == "i3" ]]; then
+				i3-msg exit
+            elif [[ "$DESKTOP_SESSION" == "xfce+i3" ]]; then
 				i3-msg exit
 			fi
 		elif [[ $ans == "no" || $ans == "NO" || $ans == "n" || $ans == "N" ]]; then
